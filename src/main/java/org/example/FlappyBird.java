@@ -40,11 +40,11 @@ public class FlappyBird extends JFrame implements ActionListener, KeyListener {
         int gap = 200;
         int spaceBetweenPipes = 300;
 
-        int maxHeight = getHeight() - gap;
+        int maxHeight = getHeight() - gap * 2;
 
         // Generate pipes with varying length and frequency
         for (int i = 0; i < 3; i++) {
-            int pipeHeight = rand.nextInt(Math.max(50, maxHeight)) + 50; // Minimum pipe height of 50
+            int pipeHeight = rand.nextInt(Math.max(50, maxHeight)) + 25; // Minimum pipe height of 50
 
             int pipeY = rand.nextInt(Math.max(1, maxHeight)) + pipeHeight;
 
@@ -119,7 +119,7 @@ public class FlappyBird extends JFrame implements ActionListener, KeyListener {
         }
 
         g.setColor(Color.red);
-        g.fillRect(50, birdY, 50, 50);
+        g.fillRect(25, birdY, 25, 25);
 
         Toolkit.getDefaultToolkit().sync();
     }
